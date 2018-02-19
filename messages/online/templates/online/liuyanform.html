@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加留言</title>
+</head>
+<body>
+    <a href="/online/">留言板</a>
+    <a href="/user/list/">用户板</a>
+    <a href="/user/logout/">退出登陆</a>
+    <form action="/online/create/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="提交" >
+    </form>
+</body>
+</html>

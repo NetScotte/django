@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+</head>
+<body>
+    <a href="/online/">留言板</a>
+    <a href="/user/logout/">退出登陆</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>用户</th>
+                <th>密码</th>
+                <th>签名</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.passwd }}</td>
+                    <td>{{ user.label }}</td>
+                    <td>{{ user.createtime }}</td>
+                    <td><a href="/user/delete/?id={{ user.username }}">删除</a></td>
+                    <td><a href="/user/edit/?id={{ user.username }}">编辑</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/user/register/">添加用户</a>
+</body>
+</html>
